@@ -1,0 +1,11 @@
+.env
+
+node_modules/
+
+# Public files
+
+public/images/avatar/a*
+public/files/report/r*
+public/files/file/*
+!public/files/file/.gitkeep
+.git_old

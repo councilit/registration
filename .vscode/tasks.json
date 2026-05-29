@@ -1,0 +1,82 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Backend: Dev (API)",
+      "type": "shell",
+      "command": "npm run dev",
+      "options": {
+        "cwd": "${workspaceFolder}/backed/ecgbc-admin-backend"
+      },
+      "isBackground": false,
+      "problemMatcher": [],
+      "presentation": { "reveal": "always", "panel": "dedicated", "showReuseMessage": false }
+    },
+    {
+      "label": "Frontend: Dev (Vite)",
+      "type": "shell",
+      "command": "npm run dev",
+      "options": {
+        "cwd": "${workspaceFolder}/frontend/ecgbc-admin-frontend"
+      },
+      "isBackground": false,
+      "problemMatcher": [],
+      "presentation": { "reveal": "always", "panel": "dedicated", "showReuseMessage": false }
+    },
+    {
+      "label": "Scripts: Seed staff",
+      "type": "shell",
+      "command": "npm run -s seed:staff",
+      "options": {
+        "cwd": "${workspaceFolder}/backed/ecgbc-admin-backend"
+      },
+      "isBackground": false,
+      "problemMatcher": [],
+      "presentation": { "reveal": "always", "panel": "new", "showReuseMessage": false, "clear": true }
+    },
+    {
+      "label": "Scripts: Seed member-newchurch",
+      "type": "shell",
+      "command": "npm run -s seed:member-newchurch",
+      "options": {
+        "cwd": "${workspaceFolder}/backed/ecgbc-admin-backend"
+      },
+      "isBackground": false,
+      "problemMatcher": [],
+      "presentation": { "reveal": "always", "panel": "new", "showReuseMessage": false, "clear": true }
+    },
+    {
+      "label": "Scripts: List scoped staff fellowships",
+      "type": "shell",
+      "command": "npm run -s script:list-staff-fellowships -- gezuabiy@gmail.com ephibillioner@gmail.com abateabinet94@gmail.com kiyagudina07@gmail.com mehirit2067@gmail.com",
+      "options": {
+        "cwd": "${workspaceFolder}/backed/ecgbc-admin-backend"
+      },
+      "isBackground": false,
+      "problemMatcher": [],
+      "presentation": { "reveal": "always", "panel": "new", "showReuseMessage": false, "clear": true }
+    },
+    {
+      "label": "Scripts: Top fellowships by member counts",
+      "type": "shell",
+      "command": "npm run -s script:top-fellowship-member-counts",
+      "options": {
+        "cwd": "${workspaceFolder}/backed/ecgbc-admin-backend"
+      },
+      "isBackground": false,
+      "problemMatcher": [],
+      "presentation": { "reveal": "always", "panel": "new", "showReuseMessage": false, "clear": true }
+    },
+    {
+      "label": "Scripts: RBAC smoke test",
+      "type": "shell",
+      "command": "npm run -s script:rbac-smoke",
+      "options": {
+        "cwd": "${workspaceFolder}/backed/ecgbc-admin-backend"
+      },
+      "isBackground": false,
+      "problemMatcher": [],
+      "presentation": { "reveal": "always", "panel": "new", "showReuseMessage": false, "clear": true }
+    }
+  ]
+}

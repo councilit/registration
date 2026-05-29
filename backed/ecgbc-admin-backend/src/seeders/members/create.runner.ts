@@ -1,0 +1,50 @@
+// import consola from "consola";
+
+import { seedMembers as seedMemberSelam } from "./selam/create.seeder";
+import { seedMembers as seedMemberAb } from "./ab/create.seeder";
+import { seedMembers as seedMemberWongel } from "./wongel/create.seeder";
+import { seedMembers as seedMemberTehadiso } from "./tehadiso/create.seeder";
+import { seedMembers as seedMemberEva } from "./eva/create.seeder";
+import { seedMembers as seedMemberPentecostal } from "./pentecostal/create.seeder";
+import { seedMembers as seedMembeRehobot } from "./rehobot/create.seeder";
+import { seedMembers as seedMembeVisionary } from "./visionary/create.seeder";
+import { seedMembers as seedMembeAddis } from "./addis/create.seeder";
+import { seedMembers as seedMembeNebar } from "./nebar/create.seeder";
+import { seedMembers as seedMembeFikr } from "./fikr/create.seeder";
+import { seedMembers as seedMemberErtriean } from "./ertriean/create.seeder";
+import { seedMembers as seedMemberNebarChurch } from "./nebar-church/create.seeder";
+import { seedMembers as seedMemberForeging } from "./foreign/create.seeder";
+import { seedMembers as seedMemberEecf } from "./eecf/create.seeder";
+
+(async () => {
+await seedMemberSelam();
+console.log(`Create seeder for selam finished successfully.`);
+await seedMemberWongel();
+console.log(`Create seeder for wongel finished successfully.`);
+await seedMemberTehadiso();
+console.log(`Create seeder for tehadiso finished successfully.`);
+await seedMemberEva();
+console.log(`Create seeder for eva finished successfully.`);
+await seedMemberPentecostal();
+console.log(`Create seeder for pentecostal finished successfully.`);
+await seedMembeRehobot();
+console.log(`Create seeder for rehobot finished successfully.`);
+await seedMemberAb();
+console.log(`Create seeder for ab finished successfully.`);
+await seedMembeVisionary();
+console.log(`Create seeder for visionary finished successfully.`);
+await seedMembeAddis();
+console.log(`Create seeder for addis finished successfully.`);
+await seedMembeNebar();
+console.log(`Create seeder for nebar finished successfully.`);
+await seedMembeFikr();
+console.log(`Create seeder for fikr finished successfully.`);
+await seedMemberErtriean();
+console.log(`Create seeder for ertriean finished successfully.`);
+await seedMemberNebarChurch();
+console.log(`Create seeder for nebar church finished successfully.`);
+await seedMemberForeging();
+console.log(`Create seeder for foreign finished successfully.`);
+await seedMemberEecf();
+console.log(`Create seeder for eecf finished successfully.`);
+})().catch(err=> console.log(err)).finally(() => console.log(`Create seeder finished successfully.`))

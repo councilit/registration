@@ -1,0 +1,55 @@
+version: '3.8'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080" 
+    environment:
+      NODE_ENV: production 
+      DATABASE_URL: ${DATABASE_URL} 
+      PORT: 8080 
+      SUPER_ADMIN_EMAIL: ${SUPER_ADMIN_EMAIL}
+      SUPER_ADMIN_PASSWORD: ${SUPER_ADMIN_PASSWORD}
+      JWT_ACCESS_SECRET_KEY: ${JWT_ACCESS_SECRET_KEY}
+      JWT_REFRESH_SECRET_KEY: ${JWT_REFRESH_SECRET_KEY}
+      JWT_ACCESS_EXPIRES_IN: ${JWT_ACCESS_EXPIRES_IN}
+      JWT_REFRESH_EXPIRES_IN: ${JWT_REFRESH_EXPIRES_IN}
+    volumes:
+      # For development, you might want to mount your source code for live reloading
+      # - .:/usr/src/app 
+      # Be careful with node_modules in volumes, often better to let container manage it
+      # - /usr/src/app/node_modules # Anonymous volume to prevent host node_modules overwriting container's
+      - ./public:/usr/src/app/public # Mount persistent storage for uploaded files
+    # depends_on:
+    #   - db
+    restart: unless-stopped
+
+#   db:
+#     image: mysql:8.0 
+#     command: >
+#       --defaults-file=/etc/mysql/conf.d/my.cnf
+#       --character-set-server=utf8mb4
+#       --collation-server=utf8mb4_unicode_ci
+#     environment:
+#       MYSQL_ROOT_PASSWORD: ${DB_ROOT_PASSWORD} # For root user
+#       MYSQL_DATABASE: ${DB_NAME}
+#       MYSQL_USER: ${DB_USER}
+#       MYSQL_PASSWORD: ${DB_PASSWORD}
+#     volumes:
+#       - mysql_data:/var/lib/mysql 
+#       - ./mysql/my.cnf:/etc/mysql/conf.d/my.cnf:ro # Mount custom config
+#     ports:
+#       - "3307:3306" 
+#     healthcheck:
+#       test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "root", "-p${DB_ROOT_PASSWORD}"]
+#       timeout: 30s
+#       retries: 5
+#       interval: 10s
+#       start_period: 30s
+#     restart: unless-stopped
+
+# volumes:
+#   mysql_data:
